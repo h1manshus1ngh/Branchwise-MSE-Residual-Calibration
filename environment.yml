@@ -9,4 +9,5 @@ dependencies:
   - opencv>=4.8
   - pillow>=10
   - tqdm>=4.66
+  - jupyterlab>=4.0
   - pip

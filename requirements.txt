@@ -6,3 +6,4 @@ pillow>=10
 tqdm>=4.66
 # Install torch and torchvision using the command selected for your CUDA version:
 # https://pytorch.org/get-started/locally/
+jupyterlab>=4.0
