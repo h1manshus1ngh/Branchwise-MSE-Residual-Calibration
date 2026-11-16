@@ -1,0 +1,20 @@
+# Datasets, frame/feature caches, pretrained weights, and environment artifacts
+data/**
+!data/README.md
+!data/.gitkeep
+dinov3/
+*.pth
+*.pt
+*.ckpt
+*.mp4
+*.avi
+*.mov
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+.venv/
+venv/
+conda-meta/
+results/**/balanced_test_predictions.csv
+results/**/predictions.csv
+*.partial.csv
