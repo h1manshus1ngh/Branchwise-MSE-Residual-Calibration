@@ -1,0 +1,64 @@
+{
+  "experiment": "BMRC branchwise MSE leave-one-generator-out, balanced 2-second evaluation",
+  "source_features": "results/paper_complete_v1/records and results/paper_complete_v1/features",
+  "duration_seconds": 2,
+  "group_coverage": {
+    "ComGenVid": 2,
+    "GenVideo": 8,
+    "VideoFeedback": 10
+  },
+  "groups_by_benchmark": {
+    "ComGenVid": [
+      "Sora",
+      "VEO3"
+    ],
+    "GenVideo": [
+      "Crafter",
+      "Gen2",
+      "Lavie",
+      "ModelScope",
+      "MorphStudio",
+      "Show_1",
+      "Sora",
+      "WildScrape"
+    ],
+    "VideoFeedback": [
+      "AnimateDiff",
+      "Fast-SVD",
+      "LVDM",
+      "LaVie-base",
+      "ModelScope",
+      "Pika",
+      "SoRA-Clip",
+      "Text2Video-Zero",
+      "VideoCrafter2",
+      "ZeroScope-576w"
+    ]
+  },
+  "split_seed": 20261112,
+  "model_seeds": [
+    42,
+    43,
+    44
+  ],
+  "split": "Each real source and each known fake generator is split 50/15/15/20. The held-out fake target is excluded entirely from training and validation. Train MSE heads on train portions of real sources and all non-target fake groups. Validation sets choose early stopping.",
+  "evaluation": "For each target generator, take its held-out target fakes and the 20% held-out real portions; deterministic balanced sample with n=min(real_test,fake_target). STALL and BMRC scores use identical IDs.",
+  "feature_calibration": "Original VATEX DINOv3 real-reference likelihood parameters; frame and normalized-transition likelihood descriptor formulas match BMRC FeatureExtractor. Stored per-frame log-likelihoods recompute exactly from final_cls and the pinned parameters.",
+  "metrics": "AUROC and average precision with real clips as positive; per-generator BMRC mean and sample SD over 3 optimization seeds; STALL is fixed per test sample.",
+  "overall_macro": {
+    "stall_auroc": 0.8313785084189993,
+    "bmrc_auroc": 0.8734028480752057,
+    "delta_auroc": 0.042024339656206354,
+    "stall_ap_real": 0.8375633425246505,
+    "bmrc_ap_real": 0.88002827273023,
+    "delta_ap_real": 0.04246493020557936,
+    "bmrc_auroc_seed_sd": 0.0008274000525654838,
+    "bmrc_ap_seed_sd": 0.0009446741900981209
+  },
+  "limitations": [
+    "20 generator groups available at 2 seconds, not all rows in the STALL paper table",
+    "VideoFeedback HotShot-XL and GenVideo HotShot-XL/MoonValley 2-second rows unavailable",
+    "seeds vary optimization only; they are not independent dataset replicates",
+    "within-benchmark training uses the other generator groups and therefore does not test zero-shot or no-label transfer"
+  ]
+}
