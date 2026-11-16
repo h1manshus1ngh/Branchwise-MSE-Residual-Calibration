@@ -44,6 +44,10 @@ evaluation. Full per-generator and per-seed tables are in
 [`results/main_lgo/`](results/main_lgo/) and
 [`results/component_ablation/`](results/component_ablation/).
 
+## Interactive walkthrough
+
+Open [`notebooks/bmrc_reproduction_demo.ipynb`](notebooks/bmrc_reproduction_demo.ipynb) for a step-by-step setup, local manifest validation, cache preparation, experiment execution, and results inspection. It does not bundle videos, DINOv3 weights, reference statistics, or private caches.
+
 ## What is required to reproduce the tables
 
 The CSVs in `results/` document the saved runs. The local feature cache and
