@@ -44,9 +44,11 @@ evaluation. Full per-generator and per-seed tables are in
 [`results/main_lgo/`](results/main_lgo/) and
 [`results/component_ablation/`](results/component_ablation/).
 
-## Interactive walkthrough
+## Interactive video demo
 
-Open [`notebooks/bmrc_reproduction_demo.ipynb`](notebooks/bmrc_reproduction_demo.ipynb) for a step-by-step setup, local manifest validation, cache preparation, experiment execution, and results inspection. It does not bundle videos, DINOv3 weights, reference statistics, or private caches.
+Open [`notebooks/bmrc_interactive_demo.ipynb`](notebooks/bmrc_interactive_demo.ipynb) to select a local video, preview its sampled frames, fit the BMRC residual heads from a labeled feature cache, and inspect the spatial, temporal, and fused scores. This is a qualitative demo, not a benchmark evaluation. It requires local video data, DINOv3 weights, STALL reference statistics, and a labeled BMRC cache; these assets are not distributed in the repository. The notebook does not upload or copy videos or caches.
+
+The demo needs `ipywidgets` and `matplotlib`, which are included in the environment and requirements files. Set `BMRC_TRAIN_CACHE` to either a prepared cache directory (`records/` and `features/`) or a compatible local `.npz` feature archive. Set `BMRC_DEMO_VIDEO_DIR` to a folder of local clips if you want the notebook to list them automatically. The notebook explains how to build a cache and run the demo.
 
 ## What is required to reproduce the tables
 
