@@ -1,0 +1,28 @@
+{
+  "description": "Full coverage replay of saved BMRC MSE heads over held-out ComGenVid test splits.",
+  "feature_cache": "local ComGenVid feature cache (not redistributed)",
+  "feature_rows": 5098,
+  "class_counts": {
+    "0": 3400,
+    "1": 1698
+  },
+  "folds": [
+    {
+      "train_generator": "Sora",
+      "test_generator": "VEO3"
+    },
+    {
+      "train_generator": "VEO3",
+      "test_generator": "Sora"
+    }
+  ],
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "full_unseen_test": "All unseen-generator fakes plus the corresponding real test partition; no train/validation/calibration real IDs are included.",
+  "balanced_test": "The existing deterministic balanced_indices procedure, applied to the same held-out split.",
+  "metrics": "AUROC, AP-real (real-positive), AP-fake, with mean and sample SD over three seeds.",
+  "important_scope": "ComGenVid only. This replay does not supply VideoFeedback or GenVideo BMRC results."
+}
