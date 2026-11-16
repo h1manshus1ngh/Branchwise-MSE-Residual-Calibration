@@ -1,0 +1,20 @@
+{
+  "description": "Paired two-second BMRC component ablation on identical leave-one-generator-out splits and test IDs.",
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "methods": [
+    "STALL fixed baseline",
+    "BMRC spatial residual only",
+    "BMRC temporal residual only",
+    "BMRC equal corrected-score fusion",
+    "BMRC full quality-gated fusion"
+  ],
+  "metrics": "AUROC and AP with real clips positive; average over optimization seeds within generator, then equal-generator macro.",
+  "limitations": [
+    "Three seeds reuse the same held-out clips and are not independent data replicates.",
+    "Component variants are diagnostic ablations on this cache and do not establish out-of-domain transfer."
+  ]
+}
