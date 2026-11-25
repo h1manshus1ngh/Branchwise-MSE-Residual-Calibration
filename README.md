@@ -3,9 +3,7 @@
 This repository contains the BMRC evaluation code and result summaries. BMRC
 uses real-reference appearance and transition likelihoods, then trains one MSE
 residual head per branch from labeled real and generated videos. The heads and
-quality-weighted fusion are supervised; the complete method is **not
-training-free**.
-
+quality-weighted fusion are supervised.
 The likelihood and calibration implementation is adapted from the released
 [STALL repository](https://github.com/OmerBenHayun/STALL). See
 [`licenses/STALL-CC-BY-NC-4.0.txt`](licenses/STALL-CC-BY-NC-4.0.txt) before
