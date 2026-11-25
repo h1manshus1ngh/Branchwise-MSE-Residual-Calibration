@@ -145,21 +145,5 @@ write per-seed and per-generator CSV files.
 
 ## Citation and attribution
 
-Please cite STALL when using its released code or real-reference likelihood
-setup:
 
-```bibtex
-@InProceedings{Ben_Hayun_2026_CVPR,
-  author    = {Ben Hayun, Omer and Betser, Roy and Levi, Meir Yossef and Kassel, Levi and Gilboa, Guy},
-  title     = {Training-free Detection of Generated Videos via Spatial-Temporal Likelihoods},
-  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
-  month     = {June},
-  year      = {2026},
-  pages     = {16299--16310}
-}
-```
-
-Add the BMRC paper citation here when its public bibliographic record is
-available. This repository does not present an unpublished manuscript as a
-published paper. DINOv3, benchmark data, and third-party packages retain their
-own licenses and terms.
+Coming soon
