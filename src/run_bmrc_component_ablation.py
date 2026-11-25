@@ -1,4 +1,4 @@
-"""Paired branch/fusion ablation for the cached two-second BMRC LGO protocol."""
+"""Paired branch/fusion ablation for the cached two-second BMRC LGO protocol.""
 from __future__ import annotations
 import json
 import os
